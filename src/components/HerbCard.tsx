@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import type { HerbProduct } from "@/data/herbs";
 
@@ -95,32 +96,30 @@ export default function HerbCard({ herb, onSelect, index }: HerbCardProps) {
             }}
           />
 
-          {/* Placeholder punnet visual */}
-          <div className="relative z-10 flex flex-col items-center justify-center gap-2">
-            <div
-              className="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
-              style={{
-                background: `linear-gradient(135deg, ${herb.environment.primary}, ${herb.environment.secondary})`,
-                boxShadow: `0 6px 24px ${herb.environment.accent}15`,
-              }}
-            >
-              <span className="text-2xl sm:text-[1.7rem]">🌿</span>
+          {/* Real punnet image */}
+          <div className="relative z-10 w-full h-full flex items-center justify-center">
+            <div className="relative w-[70%] h-[70%] max-w-[150px] max-h-[120px]">
+              <Image
+                src={herb.image}
+                alt={herb.name}
+                fill
+                className="object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+                sizes="(min-width: 1024px) 220px, 160px"
+                priority={herb.slug === "mint"}
+              />
             </div>
-            <span className="text-[8px] uppercase tracking-[0.2em] text-white/20 font-light">
-              Punnet Image
-            </span>
           </div>
         </div>
 
         {/* Card Info */}
-        <div className="flex flex-col flex-1 px-3 py-2.5 sm:px-4 sm:py-3 gap-1">
+        <div className="flex flex-col flex-1 px-3 py-2.5 sm:px-4 sm:py-3 gap-1 items-center text-center">
           <h3 className="text-[13px] sm:text-sm font-light text-white/90 tracking-wide">
             {herb.name}
           </h3>
           <p className="text-[10px] text-white/35 font-light italic leading-relaxed flex-1">
             {herb.tagline}
           </p>
-          <div className="flex items-center justify-between pt-1 mt-auto">
+          <div className="flex flex-col items-center gap-1 pt-1 mt-auto">
             <span
               className="text-xs font-light"
               style={{ color: herb.environment.accent }}

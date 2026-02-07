@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import type { HerbProduct } from "@/data/herbs";
 
@@ -142,20 +143,25 @@ export default function ProductExperience({
             style={{ backgroundColor: herb.environment.accent }}
           />
 
-          {/* Punnet Placeholder */}
+          {/* Punnet Image */}
           <div className="relative z-10 flex flex-col items-center gap-3 sm:gap-6">
-            <div
-              className="w-28 h-28 sm:w-40 sm:h-40 lg:w-64 lg:h-64 rounded-full flex items-center justify-center border border-white/10"
-              style={{
-                background: `radial-gradient(circle at 40% 40%, ${herb.environment.accent}20, transparent 70%)`,
-                boxShadow: `0 20px 60px ${herb.environment.accent}15`,
-              }}
-            >
-              <span className="text-5xl sm:text-6xl lg:text-8xl">🌿</span>
+            <div className="relative w-40 h-32 sm:w-56 sm:h-40 lg:w-80 lg:h-60">
+              <div
+                className="absolute inset-[-18%] rounded-[32px] blur-[32px] opacity-70"
+                style={{
+                  background: `radial-gradient(circle at 40% 40%, ${herb.environment.accent}30, transparent 70%)`,
+                  boxShadow: `0 32px 90px ${herb.environment.accent}20`,
+                }}
+              />
+              <Image
+                src={herb.image}
+                alt={herb.name}
+                fill
+                className="relative z-10 object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+                sizes="(min-width: 1024px) 320px, 220px"
+                priority={herb.slug === "mint"}
+              />
             </div>
-            <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] text-white/20 font-light">
-              Punnet image placeholder
-            </span>
           </div>
 
           {/* Decorative corner elements */}
@@ -166,7 +172,7 @@ export default function ProductExperience({
         {/* ========== RIGHT PANEL — Product Details ========== */}
         <div
           ref={rightRef}
-          className="relative flex-1 lg:flex-[2] bg-[#0a0a0a]/95 backdrop-blur-md p-5 sm:p-8 lg:p-12 overflow-y-auto opacity-0"
+          className="relative flex-1 lg:flex-[2] bg-[#0a0a0a]/95 backdrop-blur-md p-6 sm:p-8 lg:p-12 overflow-y-auto opacity-0 flex flex-col items-center justify-center border-t border-white/5 lg:border-t-0 lg:border-l lg:border-white/5"
         >
           {/* Close button */}
           <button
@@ -177,7 +183,10 @@ export default function ProductExperience({
             ×
           </button>
 
-          <div ref={detailsRef} className="flex flex-col gap-4 sm:gap-5 lg:gap-6 pt-1 sm:pt-2">
+          <div
+            ref={detailsRef}
+            className="flex flex-col items-center text-center gap-4 sm:gap-5 lg:gap-6 pt-4 sm:pt-2 w-full max-w-xl"
+          >
             {/* Herb Name */}
             <div>
               <span

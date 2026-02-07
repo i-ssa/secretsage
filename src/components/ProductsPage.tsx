@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { herbs, type HerbProduct } from "@/data/herbs";
 import EnvironmentBackground from "@/components/EnvironmentBackground";
 import HerbCard from "@/components/HerbCard";
@@ -38,14 +39,26 @@ export default function ProductsPage() {
       {/* Page Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
         {/* Header */}
-        <header className="pt-10 pb-8 px-4 sm:pt-14 sm:pb-10 sm:px-6 lg:pt-16 lg:pb-12 text-center">
+        <header className="pt-8 pb-6 px-4 sm:pt-10 sm:pb-8 sm:px-6 lg:pt-14 lg:pb-10 text-center">
           <div className="flex flex-col items-center gap-3 sm:gap-4">
             <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-white/25 font-light">
               Fresh Herbs · Hand Packed · Delivered
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-white/90 tracking-wider">
-              Secret Sage
-            </h1>
+            <div className="flex items-center justify-center gap-2 sm:gap-3 opacity-80">
+              <div className="relative w-5 h-5 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full border border-white/10 bg-white/0 overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="Secret Sage logo"
+                  fill
+                  className="object-contain"
+                  sizes="48px"
+                  priority
+                />
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extralight text-white/90 tracking-[0.35em] sm:tracking-[0.4em] uppercase">
+                Secret Sage
+              </h1>
+            </div>
             <p className="text-xs sm:text-sm text-white/30 font-light max-w-xs sm:max-w-md leading-relaxed">
               Select a herb to release its essence. Each transforms the
               atmosphere around you.
@@ -67,12 +80,8 @@ export default function ProductsPage() {
           </div>
         </main>
 
-        {/* Footer */}
-        <footer className="pb-8 sm:pb-12 text-center">
-          <p className="text-[9px] sm:text-[10px] text-white/15 uppercase tracking-[0.3em]">
-            Assets are provided · Experience is engineered
-          </p>
-        </footer>
+        {/* Footer (intentionally minimal for now) */}
+        <footer className="pb-8 sm:pb-12" />
       </div>
 
       {/* Product Experience Overlay */}

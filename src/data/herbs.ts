@@ -49,7 +49,7 @@ export const herbs: HerbProduct[] = [
       "Fresh, vibrant mint leaves picked at their peak. Perfect for teas, salads, and garnishes that awaken the senses.",
     price: 2.49,
     currency: "GBP",
-    image: "/herbs/mint-punnet.png",
+    image: "/herbs/mint.png",
     nutrition: {
       calories: "70 kcal / 100g",
       vitaminC: "31.8 mg",
@@ -80,7 +80,7 @@ export const herbs: HerbProduct[] = [
       "Aromatic Italian basil with deep green leaves and a peppery-sweet fragrance. The soul of Mediterranean cooking.",
     price: 2.29,
     currency: "GBP",
-    image: "/herbs/basil-punnet.png",
+    image: "/herbs/basil.png",
     nutrition: {
       calories: "23 kcal / 100g",
       vitaminC: "18 mg",
@@ -111,7 +111,7 @@ export const herbs: HerbProduct[] = [
       "Bright, citrusy coriander with delicate leaves that bring life to any dish. Essential in Asian, Latin, and Middle Eastern cuisines.",
     price: 1.99,
     currency: "GBP",
-    image: "/herbs/coriander-punnet.png",
+    image: "/herbs/corriander.jpeg",
     nutrition: {
       calories: "23 kcal / 100g",
       vitaminC: "27 mg",
@@ -142,7 +142,7 @@ export const herbs: HerbProduct[] = [
       "Woody, aromatic rosemary with needle-like leaves and a bold, piney fragrance. A staple of roasts and rustic cooking.",
     price: 2.69,
     currency: "GBP",
-    image: "/herbs/rosemary-punnet.png",
+    image: "/herbs/rosemary.png",
     nutrition: {
       calories: "131 kcal / 100g",
       vitaminC: "21.8 mg",
@@ -173,7 +173,7 @@ export const herbs: HerbProduct[] = [
       "Fragrant thyme with tiny, potent leaves that release their oils slowly. A subtle but essential flavour in French and Italian cuisine.",
     price: 2.39,
     currency: "GBP",
-    image: "/herbs/thyme-punnet.png",
+    image: "/herbs/thyme.png",
     nutrition: {
       calories: "101 kcal / 100g",
       vitaminC: "160 mg",
@@ -204,7 +204,7 @@ export const herbs: HerbProduct[] = [
       "Crisp, fresh flat-leaf parsley with a clean, peppery taste. The universal garnish that elevates every plate.",
     price: 1.89,
     currency: "GBP",
-    image: "/herbs/parsley-punnet.png",
+    image: "/herbs/parsley.png",
     nutrition: {
       calories: "36 kcal / 100g",
       vitaminC: "133 mg",
